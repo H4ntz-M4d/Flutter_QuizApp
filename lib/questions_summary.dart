@@ -14,13 +14,15 @@ class QuestionsSummary extends StatelessWidget{
           return Row(
             children: [
               Text(((data['question_index'] as int) + 1).toString()),
-              Column(children: [
-                Text(data['question'] as String),
-                const SizedBox(height: 5,),
+              Expanded(
+                child: Column(children: [
+                  Text(data['question'] as String, style: const TextStyle(color: Colors.white),),
+                  const SizedBox(height: 5,),
                 
-                Text(data['user_answer'] as String),
-                Text(data['correct_answer'] as String)
-              ],)
+                  Text(data['user_answer'] as String, style: const TextStyle(color: Colors.white),),
+                  Text(data['correct_answer'] as String, style: const TextStyle(color: Colors.white),)
+                ],),
+              )
             ],);
         }).toList(),  
     );
